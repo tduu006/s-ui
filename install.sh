@@ -59,11 +59,11 @@ install_base() {
 }
 
 config_after_install() {
-    echo -e "${yellow}正在迁移... ${plain}"
+    echo -e "${yellow}Migration... ${plain}"
     /usr/local/s-ui/sui migrate
 
-    echo -e "${yellow}安装/更新完成！出于安全考虑，建议修改面板设置 ${plain}"
-    read -p "是否继续修改设置 [y/n]？": config_confirm
+    echo -e "${yellow}Install/update finished!For security it's recommended to modify panel settings${plain}"
+    read -p "Do you want to continue with the modification [y/n]？": config_confirm
     if [[ "${config_confirm}" == "y" || "${config_confirm}" == "Y" ]]; then
         echo -e "请输入${yellow}面板端口${plain}（留空则使用现有/默认值）："
         read config_port
